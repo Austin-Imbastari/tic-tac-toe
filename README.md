@@ -8,10 +8,6 @@ A small prject utilizing Javascript, CSS, and HTML to create a tic-tac-toe game.
 - HTML5
 - CSS3
 
-## Live Demo
-
-Try the application live at [https://austin-imbastari.github.io/Space-Dream/](https://austin-imbastari.github.io/Space-Dream/)
-
 ## Features
 
 - Users can play against eacother.

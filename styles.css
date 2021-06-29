@@ -1,0 +1,318 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Merriweather Sans", sans-serif;
+	color: #bee1e6;
+}
+
+.wrapper {
+	display: flex;
+	max-width: 1440px;
+	height: 800px;
+	justify-content: center;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0 auto;
+	padding: 40px;
+}
+
+h1 {
+	font-size: 75px;
+}
+
+.title {
+	max-width: 500px;
+}
+
+.restart-btn {
+	width: 175px;
+	margin-top: 20px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20px;
+	border: solid 1px #bee1e6;
+	transition: all 0.2s ease;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.restart-btn:hover {
+	background-color: #bee1e6;
+	color: white;
+	border: solid 1px white;
+}
+
+.game {
+	display: flex;
+	flex-direction: column;
+	width: 500px;
+	height: 500px;
+	/* border: solid 2px goldenrod; */
+}
+
+.board {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-gap: 0px;
+	flex-grow: 1;
+	padding: 10px;
+}
+
+.tile {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 80px;
+	cursor: pointer;
+}
+.tile:not(:nth-child(3n)) {
+	border-right: 3px solid #fad2e1;
+}
+.tile:not(:nth-last-child(-n + 3)) {
+	border-bottom: 3px solid #fad2e1;
+}
+.tile:hover {
+	background-color: #bee1e64e;
+	color: white;
+}
+
+.header {
+	display: flex;
+	justify-content: space-evenly;
+	color: #eae4e9;
+	font-size: 25px;
+}
+
+.player-x {
+	flex: 1;
+	border-bottom: 5px solid #eee;
+	padding-bottom: 10px;
+}
+
+.player-o {
+	flex: 1;
+	border-bottom: 5px solid #eee;
+	padding-bottom: 10px;
+}
+
+.player-x.active {
+	color: #deaaffae;
+	border-color: #deaaffae;
+}
+
+.player-o.active {
+	color: #c0fdffa7;
+	border-color: #c0fdffa7;
+}
+
+.tile-x {
+	color: #deaaffae;
+}
+
+.tile-o {
+	color: #c0fdffa7;
+}
+
+.tile-winner span {
+	color: rgba(1, 255, 1, 0.49);
+}
+
+#winner-x.active {
+	color: red;
+}
+
+#winner-o.active {
+	color: red;
+}
+
+.darkmo {
+	display: flex;
+	max-width: 1440px;
+	justify-content: center;
+	margin: 0 auto;
+	padding: 40px;
+}
+
+@media only screen and (max-width: 1200px) {
+	.wrapper {
+		flex-direction: column;
+	}
+	.right-side {
+		margin-top: 50px;
+	}
+}
+
+@media only screen and (max-width: 1200px) {
+	.darkmo {
+		margin-top: 100px;
+	}
+}
+
+:root {
+	/** sunny side **/
+	--blue-background: #c2e9f6;
+	--blue-border: #72cce3;
+	--blue-color: #96dcee;
+	--yellow-background: #fffaa8;
+	--yellow-border: #f5eb71;
+	/** dark side **/
+	--indigo-background: #808fc7;
+	--indigo-border: #5d6baa;
+	--indigo-color: #6b7abb;
+	--gray-border: #e8e8ea;
+	--gray-dots: #e8e8ea;
+	/** general **/
+	--white: #fff;
+}
+
+.toggle--checkbox {
+	display: none;
+}
+.toggle--checkbox:checked {
+	/** This will all flip from sun to moon **/
+	/** Change the label color **/
+}
+.toggle--checkbox:checked ~ .background {
+	background: var(--indigo-background);
+}
+.toggle--checkbox:checked + .toggle--label {
+	background: var(--indigo-color);
+	border-color: var(--indigo-border);
+	/** Change the cloud to stars **/
+	/** Change the sun into the moon **/
+	/** Show the dimples on the moon **/
+}
+.toggle--checkbox:checked + .toggle--label .toggle--label-background {
+	left: 60px;
+	width: 5px;
+}
+.toggle--checkbox:checked + .toggle--label .toggle--label-background:before {
+	width: 5px;
+	height: 5px;
+	top: -25px;
+}
+.toggle--checkbox:checked + .toggle--label .toggle--label-background:after {
+	width: 5px;
+	height: 5px;
+	left: -30px;
+	top: 20px;
+}
+.toggle--checkbox:checked + .toggle--label:before {
+	background: var(--white);
+	border-color: var(--gray-border);
+	animation-name: switch;
+	animation-duration: 350ms;
+	animation-fill-mode: forwards;
+}
+.toggle--checkbox:checked + .toggle--label:after {
+	transition-delay: 350ms;
+	opacity: 1;
+}
+.toggle--label {
+	/** Placeholder element, starting at blue **/
+	width: 200px;
+	height: 100px;
+	background: var(--blue-color);
+	border-radius: 100px;
+	border: 1px solid var(--blue-border);
+	display: flex;
+	position: relative;
+	transition: all 350ms ease-in;
+	/** The sun cloud and moon stars **/
+	/** Sun/Moon element **/
+	/** Gray dots on the moon **/
+}
+.toggle--label-background {
+	width: 10px;
+	height: 5px;
+	border-radius: 5px;
+	position: relative;
+	background: var(--white);
+	left: 135px;
+	top: 45px;
+	transition: all 150ms ease-in;
+}
+.toggle--label-background:before {
+	content: "";
+	position: absolute;
+	top: -5px;
+	width: 40px;
+	height: 5px;
+	border-radius: 5px;
+	background: var(--white);
+	left: -20px;
+	transition: all 150ms ease-in;
+}
+.toggle--label-background:after {
+	content: "";
+	position: absolute;
+	top: 5px;
+	width: 40px;
+	height: 5px;
+	border-radius: 5px;
+	background: var(--white);
+	left: -10px;
+	transition: all 150ms ease-in;
+}
+.toggle--label:before {
+	animation-name: reverse;
+	animation-duration: 350ms;
+	animation-fill-mode: forwards;
+	transition: all 350ms ease-in;
+	content: "";
+	width: 82px;
+	height: 82px;
+	border: 5px solid var(--yellow-border);
+	top: 4px;
+	left: 4px;
+	position: absolute;
+	border-radius: 82px;
+	background: var(--yellow-background);
+}
+.toggle--label:after {
+	transition-delay: 0ms;
+	transition: all 250ms ease-in;
+	position: absolute;
+	content: "";
+	box-shadow: var(--gray-dots) -13px 0 0 2px, var(--gray-dots) -24px 14px 0 -2px;
+	left: 143px;
+	top: 23px;
+	width: 10px;
+	height: 10px;
+	background: transparent;
+	border-radius: 50%;
+	opacity: 0;
+}
+
+@keyframes switch {
+	0% {
+		left: 4px;
+	}
+	60% {
+		left: 4px;
+		width: 112px;
+	}
+	100% {
+		left: 104px;
+		width: 82px;
+	}
+}
+@keyframes reverse {
+	0% {
+		left: 104px;
+		width: 82px;
+	}
+	60% {
+		left: 72px;
+		width: 112px;
+	}
+	100% {
+		left: 4px;
+	}
+}

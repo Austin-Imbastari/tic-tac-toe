@@ -16,7 +16,7 @@ A small prject utilizing Javascript, CSS, and HTML to create a tic-tac-toe game.
 
 ## Preview
 
-![Sep-29-2020 12-40-26](https://user-images.githubusercontent.com/55529532/94607589-fb331400-0250-11eb-930b-91d4475147d7.gif)
+![Jun-28-2021 23-42-58](https://user-images.githubusercontent.com/55529532/123749845-b7664d00-d86a-11eb-80a9-c94d135b9b26.gif)
 
 ### Getting Started
 

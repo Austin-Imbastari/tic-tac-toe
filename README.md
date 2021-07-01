@@ -10,7 +10,7 @@ A small prject utilizing Javascript, CSS, and HTML to create a tic-tac-toe game.
 
 ## Features
 
-- Users can play against eacother.
+- Users can play against eachother.
 - Users can switch to dark mode theme.
 - Users can view the winner.
 
@@ -23,6 +23,6 @@ A small prject utilizing Javascript, CSS, and HTML to create a tic-tac-toe game.
 1. Clone the repository.
 
     ```shell
-    git clone https://github.com/Austin-Imbastari/space-dream-api.git
+    git clone https://github.com/Austin-Imbastari/tic-tac-toe.git
     cd tic-tak-toe
     ```
